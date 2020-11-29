@@ -1,4 +1,14 @@
-const gulp = require("gulp");
+// to define a Gulp-Task:
+// const gulp = require('gulp');
+// function taskFn(cb) {
+//     // Stuff here
+//     cb();
+// }
+// gulp.task('task-name', taskFn);
+
+
+const gulp = require("gulp");// the minimum content to use gulp:
+
 const del = require("del");
 const sass = require("gulp-sass");
 const rename = require("gulp-rename");
@@ -8,6 +18,7 @@ const autoprefixer = require("gulp-autoprefixer");
 const cssnano = require("gulp-cssnano");
 const uglify = require("gulp-uglify-es").default;
 const browserSync = require("browser-sync").create();
+// the rollup, babel and resolveNodeModules are for Bundling:
 const rollup = require("gulp-better-rollup");
 const babel = require("rollup-plugin-babel");
 const resolveNodeModules = require("rollup-plugin-node-resolve");
@@ -15,7 +26,6 @@ const resolveNodeModules = require("rollup-plugin-node-resolve");
 let isProductionBuild = false;
 
 // start with functions:
-
 function runSass() {
     return gulp
         .src("src/scss/**/*.scss")
